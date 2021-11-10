@@ -1,0 +1,22 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>    
+PREFIX dbo: <http://dbpedia.org/ontology/>    
+PREFIX dbr: <http://dbpedia.org/resource/>    
+PREFIX dbp: <http://dbpedia.org/property/>    
+PREFIX ling: <http://purl.org/linguistics/gold/>    
+SELECT DISTINCT ?a, ?name, ?type, ?foundation, ?location, ?products, ?sector, ?employee,  ?assets, ?equity, ?revenue, ?profit  
+WHERE{
+   ?a a dbo:Company;
+      foaf:name ?name;
+      dbp:foundation ?foundation;
+      dbp:location ?location;
+      dbp:products ?products;
+      dbp:numEmployees ?employee;
+      dbp:numEmployees ?employee;
+      dbp:revenue ?revenue;
+      dbp:netIncome ?profit;
+      dbp:assets ?assets;
+      dbp:equity ?equity;
+      dbp:type ?type;
+      dbo:industry ?sector.    
+   FILTER(LANG(?name) = "en").    
+} 
